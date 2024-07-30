@@ -1,7 +1,7 @@
 # All these commands must run from repository root.
 
 DOCKER_NAMESPACE := victoriametrics
-GO_BUILDER_IMAGE := golang:1.18.1-alpine
+GO_BUILDER_IMAGE := registry.cn-hangzhou.aliyuncs.com/arm64_hzc/golang:v1.18.1-alpine
 
 BUILDINFO_TAG ?= $(shell echo $$(git describe --long --all | tr '/' '-')$$( \
 	      git diff-index --quiet HEAD -- || echo '-dirty-'$$(git diff-index -u HEAD | openssl sha1 | cut -c 10-17)))
