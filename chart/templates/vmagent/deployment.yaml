@@ -30,7 +30,7 @@ spec:
       {{- end }}
       containers:
       - name: vmagent-config-updater
-        image: "victoriametrics/vmagent-config-updater:v1.1.0"
+        image: "registry.cn-hangzhou.aliyuncs.com/arm64_hzc/vmagent-config-updater:v1.1.0"
         args:
         - --httpListenAddr=:8436
         - --targetsCount={{ $.Values.targetsCount }}
@@ -78,7 +78,7 @@ spec:
         - mountPath: /vmagent-data
           name: vmagent-data
       - name: nodeexporter
-        image: prom/node-exporter:v1.4.0
+        image: registry.cn-hangzhou.aliyuncs.com/arm64_hzc/node-exporter:v1.4.0
         args:
           - --path.procfs=/host/proc
           - --path.sysfs=/host/sys
@@ -106,7 +106,7 @@ spec:
           - containerPort: 9101
             name: metrics
       - name: nginx
-        image: nginx:1.23.1
+        image: registry.cn-hangzhou.aliyuncs.com/arm64_hzc/nginx:1.23.1
         args:
           - nginx
           - -c
