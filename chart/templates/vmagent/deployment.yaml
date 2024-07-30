@@ -45,7 +45,7 @@ spec:
             memory: {{ $.Values.writeReplicaMem }}
           limits:
             memory: {{ $.Values.writeReplicaMem }}
-        image: "victoriametrics/vmagent:{{ $.Values.vmtag }}"
+        image: "registry.cn-hangzhou.aliyuncs.com/arm64_hzc/vmagent:{{ $.Values.vmtag }}"
         args:
         - --httpListenAddr=:8429
         - --remoteWrite.showURL
